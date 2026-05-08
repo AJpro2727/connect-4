@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap");
+
+:root {
+  --bg-primary: #f7f0df;
+  --text-main: #183b34;
+  --text-muted: #6f7b72;
+  --accent-main: #d95d4e;
+  --accent-second: #f2c75c;
+  --accent-green: #2f6b5f;
+  --surface-bg: rgba(255, 248, 234, 0.78);
+  --surface-border: rgba(24, 59, 52, 0.16);
+  --shadow-soft: rgba(24, 59, 52, 0.14);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: "Outfit", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  width: min(90%,1100px);
+  margin: 0 auto;
+}
+
+/* --- NAVIGATION --- */
+nav {
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 248, 234, 0.86);
+  border-bottom: 1px solid var(--surface-border);
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* senere; kan jeg få logoen til å rotere når du klikker den? */
+.logo img {
+  width: 64px;
+  transform: scale(2.35);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 0.7rem;
+}
+
+.logo-text {
+  color: var(--text-main);
+  font-weight: 800;
+}
+
+.nav-list ul {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-list ul li a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 400;
+  font-size: 1.05rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+
+
+/* --- HERO SECTION --- */
+
+.hero .container{
+  display: flex;
+  gap: 40px;
+}
+
+.hero {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.hero .text{
+  display: flex;
+  height: 70vh;
+  justify-content: center;
+  align-items:flex-start;
+  flex-direction: column;
+}
+.hero .img {
+  display: flex;
+  align-items: flex-end;
+  height: 420px;
+  width: 420px;
+  align-self: flex-end;
+  justify-content: center;
+}
+
+.hero .img img{
+  width: 820px;
+  max-width: none;
+}
+
+.hero h1 {
+  font-size: 6.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 0.3rem;
+  background-clip: text;
+  color: var(--text-main);
+  filter: drop-shadow(0 10px 20px rgba(24, 59, 52, 0.1));
+}
+
+.eyebrow{
+  margin-left: 15px;
+  color: var(--text-muted);
+  font-size: 20px;
+}
+
+.subtext{
+  max-width: 70%;
+  margin-left: 15px;
+  color: var(--text-muted);
+}
+
+.btn {
+  color: var(--accent-green);
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: inherit;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* --- GAME SECTION --- */
+.game-container {
+  padding: 0 0 2rem;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(7, 70px);
+  gap: 10px;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 1rem;
+  background: var(--accent-green);
+  border-radius: 18px;
+  box-shadow: 0 18px 42px var(--shadow-soft);
+}
+
+.cell {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--bg-primary);
+  border: 3px solid rgba(24, 59, 52, 0.18);
+}
+
+.cell.player-1 {
+  background-color: var(--accent-main);
+}
+
+.cell.player-2 {
+  background-color: var(--accent-second);
+}
+
+.status-box {
+  width: fit-content;
+  min-width: 260px;
+  max-width: 90%;
+  margin: 1rem auto 0;
+  padding: 0.85rem 1.4rem;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-main);
+  background: var(--surface-bg);
+  border: 1px solid var(--surface-border);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px var(--shadow-soft);
+}
