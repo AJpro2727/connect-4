@@ -1,50 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="/js-index.js"></script>
     <title>Connect4</title>
-</head>
-<body>
+  </head>
+  <body>
     <nav>
-        <div class="container">
-            <div class="logo">
-                <img src="images/logo.png" alt="">
-                <p class="logo-text">Connect-4</p>
-            </div>
-            <div class="nav-list">
-                
-                <ul>
-                    <li><a href="#">How it works</a></li>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Contact us</a></li>
-                </ul>
-            </div>
+      <div class="container">
+        <div class="logo">
+          <a href="#"><img id="logo" src="images/logo.png" alt="" /></a>
+          <p class="logo-text">Connect-4</p>
         </div>
+        <div class="nav-list">
+          <ul>
+            <li>
+              <a href="#">
+                How it works
+                <span class="underline"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                About us
+                <span class="underline"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Pricing
+                <span class="underline"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Contact us
+                <span class="underline"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
 
     <section class="hero">
-        <div class="container">
+      <div class="container">
+        <div class="text">
+          <p class="eyebrow">Right from your browser</p>
+          <h1><span class="h1-accent">Connect</span><span class="h1-accent2">-</span><span class="h1-accent3">4</span></h1>
+          <!-- <h1>Connect-4</h1> -->
+          <p class="subtext">
+            Drop your pieces, block your opponent, and be the first to connect
+            four in a row.
+          </p>
 
-            <div class="text">
-                <p class="eyebrow">right from your browser</p>
-                <h1>Connect 4</h1>
-                <p class="subtext">Drop your pieces, block your opponent, and be the first to connect four in a row.</p>
-            </div>
-
-            <div class="img">
-                <img src="images/hero.png" alt="">
-            </div>
+          <div class="btn-container">
+            <a href="connect4.html" class="btn primary">Play Now!</a>
+            <a href="#how-it-works" class="btn secondary">Read more</a>
+          </div>
         </div>
 
-
-
-
-
+        <div class="img">
+          <img src="images/hero.png" alt="" />
+        </div>
+      </div>
     </section>
-    
-    
-</body>
+
+    <section id="how-it-works" class="how-it-works">
+      <div class="container">
+        <div class="title-left">
+          <h2>How to play</h2>
+        </div>
+        <div class="flex-group">
+          <div class="card">
+            <div class="card-nr"><p>1</p></div>
+            <div class="card-text">
+              <div class="card-title"><h3>Pick a column</h3></div>
+              <div class="card-subtext">
+                <p>
+                    Press anywhere on the board to place a piece into your chosen
+                    column
+                </p>
+              </div>
+            </div>
+          </div>
+
+           <div class="card">
+            <div class="card-nr"><p>2</p></div>
+            <div class="card-text">
+              <div class="card-title"><h3>Take turns</h3></div>
+              <div class="card-subtext">
+                <p>
+                    You and your friend take turns placing one piece into the board.
+                </p>
+              </div>
+            </div>
+          </div>
+
+           <div class="card">
+            <div class="card-nr"><p>3</p></div>
+            <div class="card-text">
+              <div class="card-title"><h3>Connect 4!</h3></div>
+              <div class="card-subtext">
+                <p>
+                    Win by connecting 4 pieces either vertically, diagonally or horizontally!
+                </p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <section class="testing"></section>
+  </body>
 </html>

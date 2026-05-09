@@ -2,10 +2,10 @@ const gameContainerEl = document.querySelector(".grid-4")
 const btnStartEl = document.querySelector(".start")
 const statusEl = document.querySelector(".status-box")
 
-btnStartEl.addEventListener("click", function () {
-    renderBoard()
-    renderStatus()
-})
+
+renderBoard()
+renderStatus()
+
 
 
 function renderBoard(){
