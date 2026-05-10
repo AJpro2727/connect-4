@@ -71,7 +71,7 @@ nav .container {
 }
 
 
-/* underline effects */
+/* underline effekter */
 .nav-list a{
   position: relative;
 }
@@ -293,8 +293,10 @@ a{
   box-shadow: 0 14px 32px var(--shadow-soft);
   display: flex;
   gap: 50px;
+  position: relative;
+  overflow: hidden;
 
-  /* start */
+  /* animasjon */
   opacity: 0;
   transform: translateY(60px);
   transition: 0.4s;
@@ -305,17 +307,49 @@ a{
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: var(--accent-main);
-  color: var(--bg-primary);
   align-items: center;
   justify-content: center;
+  color: var(--bg-primary);
   flex-shrink: 0;
   font-weight: 800;
   transition: 0.4s;
+  transition: scale ease 3s;
+  position: relative;
 
-  /* start */
+  /* animasjon */
   opacity: 0;
   transform: translateY(-90px);
+}
+.card-title h3, .card-subtext p{
+  transition: 2.5s;
+}
+
+.card-nr p{
+  z-index: 3;
+}
+.card-nr::before{
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--accent-main);
+  transition: 2.5s;
+}
+
+.card:hover .card-nr::before{
+  scale: 19;
+}
+.card:hover .card-text *{
+  color: var(--bg-primary);
+}
+
+.card:nth-child(2):hover h3{
+  color: var(--text-main);
+}
+.card:nth-child(2):hover .card-subtext p{
+  color: var(--text-muted);
 }
 
 .card-active, .card-nr-active{
@@ -323,14 +357,14 @@ a{
   transform: translateY(0);
 }
 
-
-
-.card:nth-child(2) .card-nr{
+.card:nth-child(2) .card-nr::before{
   background: var(--accent-second);
+}
+.card:nth-child(2) .card-nr{
   color: var(--text-main);
 }
 
-.card:nth-child(3) .card-nr{
+.card:nth-child(3) .card-nr::before{
   background: var(--accent-third);
   color: var(--bg-primary);
 }
@@ -341,18 +375,202 @@ a{
   gap: 15px;
 }
 
+
 .card-title{
   color: var(--text-main);
+  z-index: 3;
 }
 
 .card-subtext{
   color: var(--text-muted);
+  z-index: 3;
+}
+
+.challange{
+  min-height: 40vh;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
+
+.challange .container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 3px solid var(--surface-border);
+  border-radius: 20px;
+  padding: 1rem 2rem;
+  width: 65%;
+  
+}
+.flex-group-left{
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.flex-group-left .left-text{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.left-text h2{
+  font-size: 45px;
+}
+.left-text .subtext{
+  font-size: 17px;
+  margin-left: 0;
+}
+
+.flex-group-left a{
+  width: fit-content;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  align-self: start;
+}
+.grid-card{
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border: 2px solid var(--surface-border);
+  border-radius: 999px;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  transition: 1.5s;
+}
+.grid-card h3{
+  z-index: 3;
+}
+.dot{
+  width: 10px;
+  height: 10px;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent-main);
+  transition: 1.5s;
+}
+
+.grid-card:hover .dot{
+  scale: 32;
+}
+.grid-card:nth-of-type(2) .dot{
+  background: var(--accent-second);
+}
+.grid-card:nth-of-type(3) .dot{
+  background: var(--accent-third);
+}
+.grid-card:nth-of-type(4) .dot{
+  background: var(--accent-green);
+}
+
+.mini-board{
+  display: grid;
+  grid-template-columns: repeat(7, 30px);
+  gap: 8px;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--accent-green);
+  border-radius: 18px;
+  box-shadow: 0 18px 42px var(--shadow-soft);
+  height: fit-content;
+  width: fit-content;
+}
+.board{
+  position: relative;
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+  border: 3px solid var(--surface-border);
+  border-radius: 25px;
+}
+
+.label{
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  background: var(--bg-primary);
+  border: 3px solid var(--surface-border);
+  color: var(--text-main);
+  font-weight: 800;
+}
+
+.top{
+  position: absolute;
+  top: -20px;
+  left: 25px;
+}
+
+.bottom{
+  position: absolute;
+  right: -27px;
+  bottom: 35px;
+  background: var(--accent-main);
+  color: var(--bg-primary);
+}
+
+.red{
+  background: var(--accent-main) !important;
+  transition: 0.35s;
+}
+.yellow{
+  background: var(--accent-second) !important;
+  transition: 0.35s;
+}
+
+.slot{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--bg-primary);
+  overflow: hidden; /* dette bedre med eller uten? KOM TILBAKE */
+}
+.piece{
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 
 
-.testing{
-  height: 100vh;
+@keyframes dropIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-70px) scale(0.96);
+  }
+
+  58% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  72% {
+    transform: translateY(9px) scale(1.03, 0.97);
+  }
+
+  82% {
+    transform: translateY(-5px) scale(0.99, 1.01);
+  }
+
+  92% {
+    transform: translateY(3px) scale(1.01, 0.99);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
+
+.pieceActive{
+  animation: dropIn 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+
 
 /* --- GAME SECTION --- */
 .game-container {

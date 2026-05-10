@@ -17,3 +17,22 @@ const observer = new IntersectionObserver(function(entries){
 for (const cardEl of cardEls){
     observer.observe(cardEl)
 }
+
+/* plasserer brikker i trejde seksjon */
+
+const pieceEls = document.querySelectorAll(".piece")
+let index = 13
+const observer2 = new IntersectionObserver(function(entries){
+    for (const entry of entries){
+
+        if (entry.isIntersecting){
+            entry.target.classList.add("pieceActive")
+            observer2.unobserve(entry.target)
+        }
+    }
+})
+
+for (const pieceEl of pieceEls){
+    pieceEl.style.animationDelay = `${pieceEl.dataset.drop * 0.10}s`
+    observer2.observe(pieceEl)
+}

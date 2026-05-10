@@ -49,8 +49,12 @@
       <div class="container">
         <div class="text">
           <p class="eyebrow">Right from your browser</p>
-          <h1><span class="h1-accent">Connect</span><span class="h1-accent2">-</span><span class="h1-accent3">4</span></h1>
+          <h1>
+            <span class="h1-accent">Connect</span
+            ><span class="h1-accent2">-</span><span class="h1-accent3">4</span>
+          </h1>
           <!-- <h1>Connect-4</h1> -->
+          <!-- jeg skal se om jeg vil ha fargete h1 eller bare orginal -->
           <p class="subtext">
             Drop your pieces, block your opponent, and be the first to connect
             four in a row.
@@ -80,42 +84,131 @@
               <div class="card-title"><h3>Pick a column</h3></div>
               <div class="card-subtext">
                 <p>
-                    Press anywhere on the board to place a piece into your chosen
-                    column
+                  Press anywhere on the board to place a piece into your chosen
+                  column
                 </p>
               </div>
             </div>
           </div>
 
-           <div class="card">
+          <div class="card">
             <div class="card-nr"><p>2</p></div>
             <div class="card-text">
               <div class="card-title"><h3>Take turns</h3></div>
               <div class="card-subtext">
                 <p>
-                    You and your friend take turns placing one piece into the board.
+                  You and your friend take turns placing one piece into the
+                  board.
                 </p>
               </div>
             </div>
           </div>
 
-           <div class="card">
+          <div class="card">
             <div class="card-nr"><p>3</p></div>
             <div class="card-text">
               <div class="card-title"><h3>Connect 4!</h3></div>
               <div class="card-subtext">
                 <p>
-                    Win by connecting 4 pieces either vertically, diagonally or horizontally!
+                  Win by connecting 4 pieces either vertically, diagonally or
+                  horizontally!
                 </p>
               </div>
             </div>
           </div>
-
-
         </div>
       </div>
     </section>
 
-    <section class="testing"></section>
+    <section class="challange">
+      <div class="container">
+        <div class="flex-group-left">
+          <div class="left-text">
+            <h2>Ready to make your first move?</h2>
+            <p class="subtext">
+              Jump into a quick round of Connect 4, place the first piece, and
+              see who can build the winning line.
+            </p>
+          </div>
+          
+          <a href="connect4.html" class="btn primary">Play Now</a>
+
+          <div class="grid-container">
+            <div class="grid-card">
+              <div class="dot"></div>
+              <h3>2 Players</h3>
+            </div>
+            <div class="grid-card">
+              <div class="dot"></div>
+              <h3>No setup</h3>
+            </div>
+            <div class="grid-card">
+              <div class="dot"></div>
+              <h3>Win detection</h3>
+            </div>
+            <div class="grid-card">
+              <div class="dot"></div>
+              <h3>Browser game</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="board">
+            <span class="top label">Your move</span>
+            <span class="bottom label">Connect-4</span>
+            <a href="connect4.html">
+                <div class="mini-board">
+                  <span class="slot"></span>
+                  <span class="slot"></span>
+                  <span class="slot"></span>
+                  <span class="slot"></span>
+                  <span class="slot"></span>
+                  <span class="slot"></span>
+                  <span class="slot"></span>
+
+                  <span class="slot"></span>
+                  <span class="slot"></span>
+                  <span class="slot"></span>
+                  <span class="slot"></span>
+                  <span class="slot"></span>
+                  <span class="slot"></span>
+                  <span class="slot"></span>
+
+                  <span class="slot"></span>
+                  <span class="slot"></span>
+                  <span class="slot"><span class="red piece" data-drop="13"></span></span>
+                  <span class="slot"></span>
+                  <span class="slot"></span>
+                  <span class="slot"></span>
+                  <span class="slot"></span>
+
+                  <span class="slot"></span>
+                  <span class="slot"><span class="red piece" data-drop="9"></span></span>
+                  <span class="slot"><span class="yellow piece" data-drop="11"></span></span>
+                  <span class="slot"><span class="red piece" data-drop="12"></span></span>
+                  <span class="slot"></span>
+                  <span class="slot"></span>
+                  <span class="slot"></span>
+
+                  <span class="slot"><span class="red piece" data-drop="6"></span></span>
+                  <span class="slot"><span class="yellow piece" data-drop="8"></span></span>
+                  <span class="slot"><span class="red piece" data-drop="7"></span></span>
+                  <span class="slot"><span class="yellow piece" data-drop="10"></span></span>
+                  <span class="slot"></span>
+                  <span class="slot"></span>
+                  <span class="slot"></span>
+                  
+                  <span class="slot"><span class="yellow piece" data-drop="4"></span></span>
+                  <span class="slot"><span class="red piece" data-drop="1"></span></span>
+                  <span class="slot"><span class="yellow piece" data-drop="3"></span></span>
+                  <span class="slot"><span class="red piece" data-drop="5"></span></span>
+                  <span class="slot"><span class="yellow piece" data-drop="2"></span></span>
+                  <span class="slot"></span>
+                  <span class="slot"></span>
+                </div>
+            </a>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
