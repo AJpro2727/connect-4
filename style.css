@@ -149,6 +149,108 @@ nav .container {
 
 
 
+/*footer */
+
+footer{
+  margin-bottom: 4rem;
+  display: flex;
+  border-top: 2px solid var(--surface-border);
+  padding-top: 5rem;
+
+}
+
+.footer-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+}
+
+footer li{
+  list-style: none;
+  padding: 10px;
+  padding-left: 2px !important;
+}
+
+.footer-grid-card{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-self:right;
+}
+.footer-grid-card:first-child{
+  height: inherit;
+}
+.footer-grid-card:first-child h2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-grid-card:last-child{
+  width: fit-content;
+}
+ .footer-card-nr{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  background-color: var(--accent-green);
+}
+
+.footer-card-nr p{
+  color: var(--bg-primary);
+  font-weight: 800;
+}
+.brand{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+footer .subtext{
+  margin-left: 0 !important;
+  max-width: 80% !important;
+}
+
+.dots{
+  display: flex;
+  gap: 5px;
+}
+.footer-dot{
+  width: 20px;
+  height: 20px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--accent-main)
+}
+.footer-dot:nth-child(2){
+  background: var(--accent-second);
+}
+.footer-dot:nth-child(3){
+  background: var(--accent-third);
+}
+.footer-dot:last-child{
+  background: var(--accent-green);
+}
+
+footer a{
+  color: var(--text-muted);
+  font-weight: 800;
+}
+.footer-grid-card:nth-child(2) a:hover{
+  color: var(--accent-main);
+}
+.footer-grid-card:nth-child(3) a:hover{
+  color: var(--accent-second);
+}
+.footer-grid-card:nth-child(4) a:hover{
+  color: var(--accent-third);
+}
+
+
+
 /* --- HERO SECTION --- */
 
 .hero .container{
@@ -228,7 +330,9 @@ nav .container {
   cursor: pointer;
   transition: 0.3s;
 }
-
+.hero .btn{
+  margin-left: 15px;
+}
 .primary{
   background:var(--accent-green);
   color: var(--bg-primary);
@@ -341,6 +445,7 @@ a{
 .card:hover .card-nr::before{
   scale: 19;
 }
+
 .card:hover .card-text *{
   color: var(--bg-primary);
 }
@@ -567,8 +672,12 @@ a{
 }
 
 .pieceActive{
-  animation: dropIn 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation: dropIn 0.55s both;
 }
+
+
+
+
 
 
 
