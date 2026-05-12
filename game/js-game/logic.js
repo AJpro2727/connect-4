@@ -12,12 +12,12 @@ console.log(board[0][0])
 let currentPlayer = 1
 let gameOver = false
 let winner = null
+let winnerName = null
 let lastMove = null
 let moveCount = 0
+let redPlayer = ""
+let yellowPlayer = ""
 
-const btnRestartEl = document.getElementById("restart")
-
-btnRestartEl.addEventListener("click",restartGame)
 
 function restartGame(){
      board = [
@@ -32,10 +32,9 @@ function restartGame(){
     currentPlayer = 1
     gameOver = false
     winner = null
+    winnerName = null
     lastMove = null
     moveCount = 0
-    renderBoard()
-    renderStatus()
 }
 
 function placePiece(column){
@@ -52,7 +51,7 @@ function placePiece(column){
         }
         }
     
-    alert("The column is already full!")
+    statusEl.textContent = "This column is already full!"
     return
     
 }
@@ -142,6 +141,12 @@ function checkWin(){
 
      if (horizontalCount >= 4 || leftDiagonalCount >= 4 || rightDiagonalCount >= 4  || verticalCount >= 4) {
         winner = player
+        if (winner === 1){
+            winnerName = redPlayer
+        }
+        else{
+            winnerName = yellowPlayer
+        }
         gameOver = true
         return true
     }

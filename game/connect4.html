@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4 på rad</title>
+    <link rel="stylesheet" href="game-style.css" />
+    <link rel="stylesheet" href="../Index/style.css" />
+    <script src="js-game/logic.js" defer></script>
+    <script src="js-game/ui.js" defer></script>
+  </head>
+
+  <body>
+    <nav class="game-nav">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html"><img src="images/logo.png" alt="" /></a>
+        </div>
+        <div class="nav-list">
+          <ul>
+            <li><a href="#">How it works</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Contact us</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main class="main-content">
+      <section class="information-panel">
+        <div class="brand">
+          <div class="dot"></div>
+          <h2>Connect-4</h2>
+        </div>
+        <div class="title">
+          <h1>Ready to drop?</h1>
+          <p class="subtext">
+            Drop your piece into a column, block your opponent, and be the first
+            player to connect four in a row.
+          </p>
+        </div>
+        <div class="turn-box">
+            <div>
+                <div class="current">current turn</div>
+                <h4 id="turnName">AJ</h4>
+            </div>
+            <span class="cell"></span>
+        </div>
+        <div class="player-cards">
+            <div class="player" id="red">
+                <div class="player-flex-group">
+                    <div class="dot"></div>
+                    <p id="playerName"></p>
+                </div>
+                <p>red</p>
+            </div>
+            <div class="player" id="yellow">
+                  <div class="player-flex-group">
+                    <div class="dot"></div>
+                    <p id="playerName"></p>
+                </div>
+                <p>yellow</p>
+            </div>
+        </div>
+        <div class="game-btns">
+            <button class="btn primary restart">restart game</button>
+            <button id="changeName" class="btn secondary">change names</button>
+        </div>
+      </section>
+      <section class="game-container">
+        <div class="status-pill">
+            <div class="dot"></div>
+            <p></p>
+        </div>
+        <div class="grid-4"></div>
+        <div class="rules">
+            <p>Click a column to drop your piece. First player to connect four horizontally, vertically, or diagonally wins.</p>
+        </div>
+      </section>
+    </main>
+    <div class="popup-container" id="startPopup">
+        <div class="popup">
+            <div class="title">
+                <h2>Start game</h2>
+                <p class="subtext">Ready to play?</p>
+            </div>
+            <button id="hideStart" class="btn primary">Start game</button>
+        </div>
+    </div>
+
+    <div class="popup-container hidden" id="changeNamePopup">
+        <div class="popup">
+            <div class="title">
+                <h2>Player names</h2>
+                <p class="subtext">choose names for both players.</p>
+            </div>
+            <div class="inputs">
+                <input type="text" id="player-red" placeholder="This player will have red pieces">
+                <input type="text" id="player-yellow" placeholder="This player will have yellow pieces">
+            </div>
+            <button id="hideName" class="btn primary">Start match</button>
+        </div>
+    </div>
+
+    <div class="popup-container hidden" id="winnerRed">
+        <div class="popup winner-red">
+            <div id="winnerCell" class="cell player-1"></div>
+            <div class="title">
+                <h2 class="winner-title"></h2>
+                <p class="subtext">Red connected four in a row!</p>
+            </div>
+            <div class="popup-btns">
+                <button class="btn primary restart">Play again</button>
+                <button id="changeName" class="btn secondary">Change names</button>
+            </div>
+        </div>
+    </div>
+     <div class="popup-container hidden" id="winnerYellow">
+        <div class="popup winner-yellow">
+            <div id="winnerCell" class="cell player-2"></div>
+            <div class="title">
+                <h2 class="winner-title"></h2>
+                <p class="subtext">Yellow connected four in a row!</p>
+            </div>
+            <div class="popup-btns">
+                <button class="btn primary restart">Play again</button>
+                <button id="changeName" class="btn secondary">Change names</button>
+            </div>
+        </div>
+    </div>
+
+     <div class="popup-container" id="draw">
+        <div class="popup draw">
+            <div class="cells">
+              <span class="cell player-1"></span>
+              <span class="cell player-2"></span>
+            </div>
+            <div class="title">
+                <h2>The game is a draw!</h2>
+                <p class="subtext">No one managed to connect-4! It ends in a draw.</p>
+            </div>
+            <div class="popup-btns">
+                <button class="btn primary restart">Play again</button>
+                <button id="changeName" class="btn secondary">Change names</button>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
