@@ -404,7 +404,6 @@ a {
   flex-shrink: 0;
   font-weight: 800;
   transition: 0.4s;
-  transition: scale ease 3s;
   position: relative;
 
   /* animasjon */

@@ -6,17 +6,14 @@ let board = [
     [0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0]
 ]
-
-console.log(board[0][0])
-
 let currentPlayer = 1
 let gameOver = false
 let winner = null
 let winnerName = null
 let lastMove = null
 let moveCount = 0
-let redPlayer = ""
-let yellowPlayer = ""
+let redPlayer = "Player 1"
+let yellowPlayer = "Player 2"
 
 
 function restartGame(){

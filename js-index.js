@@ -21,7 +21,7 @@ for (const cardEl of cardEls){
 /* plasserer brikker i trejde seksjon */
 
 const pieceEls = document.querySelectorAll(".piece")
-let index = 13
+
 const observer2 = new IntersectionObserver(function(entries){
     for (const entry of entries){
 
