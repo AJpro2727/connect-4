@@ -6,10 +6,13 @@ let board = [
     [0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0]
 ]
+
 let currentPlayer = 1
 let gameOver = false
 let winner = null
 let winnerName = null
+let loserName = null
+let colorWon = null
 let lastMove = null
 let moveCount = 0
 let redPlayer = "Player 1"
@@ -30,15 +33,14 @@ function restartGame(){
     gameOver = false
     winner = null
     winnerName = null
+    loserName = null
+    colorWon = null
     lastMove = null
     moveCount = 0
 }
 
 function placePiece(column){
-    if (gameOver === true){
-        alert(`Spiller ${winner} har allerede vunnet!`)
-        return
-    }
+    if (gameOver) return false 
     
     for (let row = 5;row >= 0; row--){
         if (board[row][column] === 0){
@@ -47,9 +49,8 @@ function placePiece(column){
             return lastMove = [row,column]
         }
         }
-    
-    statusEl.textContent = "This column is already full!"
-    return
+
+    return false
     
 }
 function checkWin(){
@@ -140,9 +141,13 @@ function checkWin(){
         winner = player
         if (winner === 1){
             winnerName = redPlayer
+            colorWon = "red"
+            loserName = yellowPlayer
         }
         else{
             winnerName = yellowPlayer
+            colorWon = "yellow"
+            loserName = redPlayer
         }
         gameOver = true
         return true

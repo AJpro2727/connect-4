@@ -2,11 +2,12 @@ const gameContainerEl = document.querySelector(".grid-4")
 const turnBoxEl = document.querySelector(".turn-box")
 const turnBoxCellEl = turnBoxEl.querySelector(".cell")
 
-
+/* status variabler */
 const statusPillEl = document.querySelector(".status-pill")
 const statusDotEl = statusPillEl.querySelector(".dot")
 const statusEl = statusPillEl.querySelector("p")
 
+/* Logic/UI variabler */
 const turnNameEl = turnBoxEl.querySelector("#turnName")
 const redCardEl = document.querySelector("#red")
 const redNameEl = redCardEl.querySelector("#playerName")
@@ -17,21 +18,29 @@ const player2Name = document.querySelector("#player-yellow")
 
 const winnerTitleEls = document.querySelectorAll(".winner-title")
 
+/* Btn vriabler */
 const nameChangeBtnEls = document.querySelectorAll("#changeName")
 const btnRestartEls = document.querySelectorAll(".restart")
 const btnCancelEl = document.querySelector("#cancelExit")
 const hideStartBtn = document.querySelector("#hideStart")
 const hideNameBtn = document.querySelector("#hideName")
 
+/* popup variabler */
 const popups = document.querySelectorAll(".popup-container")
 
 const namePopupEl = document.querySelector("#changeNamePopup")
+const namePopupSubtext = namePopupEl.querySelector("p")
+
 const redWonPopup = document.querySelector("#winnerRed")
 const yellowWonPopup = document.querySelector("#winnerYellow")
 const drawpopup = document.querySelector("#draw")
 const exitPopup = document.querySelector("#exit")
+const homeBtn = document.querySelector(".home-btn")
 
+/* Historie variabel */
+let gameHistory = JSON.parse(localStorage.getItem("history")) || []
 
+/* For-loops */
 
 for (const nameChangeBtnEl of nameChangeBtnEls){
     nameChangeBtnEl.addEventListener("click", function(){
@@ -59,6 +68,8 @@ for (const popup of popups){
     })
 }
 
+/* eventlisteners  */
+
 hideStartBtn.addEventListener("click", function(){
     hideAllPopups()
     namePopupEl.classList.remove("hidden")
@@ -83,6 +94,11 @@ btnCancelEl.addEventListener("click", function(){
     hideAllPopups()
 })
 
+homeBtn.addEventListener("click", function(){
+    hideAllPopups()
+    exitPopup.classList.remove("hidden")
+})
+
 document.addEventListener("keydown", function(event){
     let amount = 0
     let amountNeeded = popups.length
@@ -100,15 +116,26 @@ document.addEventListener("keydown", function(event){
     }
 })
 
+
+/* Funsjoner  */
 function validateInputs(){
     let isValid = true
     const nameInputs = [player1Name, player2Name]
+    if(player1Name.value === player2Name.value && player1Name.value !== ""){
+        player1Name.classList.add("invalid")
+        player2Name.classList.add("invalid")
+        namePopupSubtext.textContent = "You can't have the same name!"
+        isValid = false
+        return isValid
+    }
 
     for (const input of nameInputs){
         input.classList.remove("invalid")
 
         if (input.value === ""){
             input.classList.add("invalid")
+            namePopupSubtext.textContent = "Both players needs a name!"
+
             isValid = false
         }
     }
@@ -153,6 +180,12 @@ function renderBoard(){
 
             cellEl.addEventListener("click",function(){
                 const placed = placePiece(col)
+                if (!placed){
+                    statusEl.textContent = "This column is already full!"
+                }
+                if (!placed && gameOver){
+                    statusEl.textContent = "The game is already over!"
+                }
 
                 if (placed) {
                     const didWin = checkWin()
@@ -195,6 +228,21 @@ function renderStatus() {
             yellowWonPopup.classList.remove("hidden")
         }
 
+
+        gameHistory.push(
+            {
+                winner: winnerName, 
+                loser: loserName,
+                color: colorWon,
+                playerRed: player1Name.value,
+                playerYellow: player2Name.value,
+                date: new Date().toLocaleDateString(),
+                board: board,
+            }
+        )
+
+        localStorage.setItem("history", JSON.stringify(gameHistory))
+
     }
     else if (gameOver === true && winner === "uavgjort"){
         statusEl.textContent = `Ingen vant. Spillet er uavgjort!`
@@ -202,6 +250,18 @@ function renderStatus() {
         statusDotEl.classList.remove("player-2")
         turnBoxCellEl.classList.remove("player-1")
         turnBoxCellEl.classList.remove("player-2")
+
+         gameHistory.push(
+            {
+                winner: "draw", 
+                playerRed: player1Name.value,
+                playerYellow: player2Name.value,
+                date: new Date().toLocaleDateString(),
+                board: board
+            }
+        )
+
+        localStorage.setItem("history", JSON.stringify(gameHistory))
     }
     else {
 
@@ -224,6 +284,6 @@ function renderStatus() {
     }
 }
 
-
+/* gamestart */
 renderBoard()
 renderStatus()

@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>4 på rad</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script defer src="../nav.js"></script>
     <link rel="stylesheet" href="game-style.css" />
     <link rel="stylesheet" href="../style.css" />
     <script src="js-game/logic.js" defer></script>
@@ -18,11 +26,14 @@
         </div>
         <div class="nav-list">
           <ul>
-            <li><a href="#">Home</a></li>
+            <li><a class="home-btn">Home</a></li>
             <li><a href="#">Rules</a></li>
-            <li><a href="#">Contact us</a></li>
+            <li><a href="../stats.html">Statistics</a></li>
           </ul>
         </div>
+        <i class="fa-solid fa-x cross"></i>
+        <i class="fa-solid fa-bars burger"></i>
+
       </div>
     </nav>
     <main class="main-content">
@@ -155,8 +166,8 @@
     <div class="popup-container hidden" id="exit">
       <div class="popup exit">
         <div class="title">
-          <h2>Do you want to exit the game?</h2>
-          <p class="subtext">Are you sure you want to exit? The game will not be saved!</p>
+          <h2>Are you sure you want to exit?</h2>
+          <p class="subtext">The game will not be saved!</p>
         </div>
         <div class="popup-btns">
           <button id="cancelExit" class="btn primary">Cancel</button>

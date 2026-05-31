@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script defer src="nav.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script defer src="js-index.js"></script>
     <title>Connect4</title>
   </head>
@@ -17,38 +25,27 @@
         <div class="nav-list">
           <ul>
             <li>
-              <a href="#">
-                How it works
-                <span class="underline"></span>
-              </a>
+              <a href="#how-it-works"> How it works </a>
             </li>
             <li>
-              <a href="#">
-                About us
-                <span class="underline"></span>
-              </a>
+              <a href="stats.html"> Stats </a>
             </li>
             <li>
-              <a href="#">
-                Pricing
-                <span class="underline"></span>
-              </a>
+              <a href="#footer"> Contact us </a>
             </li>
             <li>
-              <a href="#">
-                Contact us
-                <span class="underline"></span>
-              </a>
+              <a href="game/connect4.html" class="btn primary"> Play </a>
             </li>
           </ul>
         </div>
+        <i class="fa-solid fa-x cross"></i>
+        <i class="fa-solid fa-bars burger"></i>
       </div>
     </nav>
 
     <section class="hero">
       <div class="container">
         <div class="text">
-          <p class="eyebrow">Right from your browser</p>
           <h1>
             <span class="h1-accent">Connect</span
             ><span class="h1-accent2">-</span><span class="h1-accent3">4</span>
@@ -64,12 +61,13 @@
         </div>
 
         <div class="img">
-          <img src="images/hero.png" alt="" />
+          <img class="pc-img" src="images/hero.png" alt="" />
+          <img class="mobile-img" src="images/hero-mobile.png" alt="" />
         </div>
       </div>
     </section>
 
-    <section id="how-it-works" class="how-it-works">
+    <section class="how-it-works" id="how-it-works">
       <div class="container">
         <div class="title-left">
           <h2>How to play</h2>
@@ -153,7 +151,7 @@
         <div class="board">
           <span class="top label">Your move</span>
           <span class="bottom label">Connect-4</span>
-          <a href="./game/connect4.html">
+          <a href="game/connect4.html">
             <div class="mini-board">
               <span class="slot"></span>
               <span class="slot"></span>
@@ -239,7 +237,6 @@
         <div class="footer-grid">
           <div class="footer-grid-card">
             <div class="brand">
-              <div class="footer-card-nr"><p>4</p></div>
               <h2>Connect-4</h2>
             </div>
             <p class="subtext">
@@ -251,7 +248,7 @@
               ><span class="footer-dot"></span><span class="footer-dot"></span>
             </div>
           </div>
-          <div class="footer-grid-card">
+          <div class="footer-grid-card" id="footer">
             <h3>Page</h3>
             <ul>
               <li><a href="">Top</a></li>
@@ -268,11 +265,11 @@
             </ul>
           </div>
           <div class="footer-grid-card">
-            <h3>Code</h3>
+            <h3>Contact us</h3>
             <ul>
-              <li><a href="">Layout</a></li>
-              <li><a href="">Animation</a></li>
-              <li><a href="">Game logic</a></li>
+              <li><a>Aleksander Jørgensen</a></li>
+              <li><a href="tel:+4745966133">+47 45966133</a></li>
+              <li><a href="mailto:aleksander.joergensen@gmail.com">aleksander.joergensen@gmail.com</a></li>
             </ul>
           </div>
         </div>

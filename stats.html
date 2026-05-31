@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="game/game-style.css" />
+    <script defer src="nav.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="js-index.js" defer></script>
+    <title>Stats</title>
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <div class="logo">
+          <a href="index.html"
+            ><img id="logo" src="images/logo.png" alt=""
+          /></a>
+          <p class="logo-text">Connect-4</p>
+        </div>
+        <div class="nav-list">
+          <ul>
+            <li>
+              <a href="index.html"> Home </a>
+            </li>
+            <li>
+              <a href="#history"> History </a>
+            </li>
+            <li>
+              <a href="#footer"> Contact us </a>
+            </li>
+            <li>
+              <a href="#" class="btn primary"> Play </a>
+            </li>
+          </ul>
+        </div>
+        <i class="fa-solid fa-x cross"></i>
+        <i class="fa-solid fa-bars burger"></i>
+      </div>
+    </nav>
+
+    <section class="stats">
+      <div class="container">
+        <div class="stats-title">
+          <h1>Stats and History</h1>
+        </div>
+        <div class="stats-container">
+          <div class="stat-card totalGames">
+            <h2 id="gameAmount"></h2>
+            <p class="subtext">Antall kamper spilt</p>
+          </div>
+
+          <div class="stat-card mostWon">
+            <h2 id="playerMostWon"></h2>
+            <p class="subtext">
+              Har vunnet flest kamper med <span id="amountWon"></span> vunnet
+              spill!
+            </p>
+          </div>
+          <div class="stat-card" id="redVsYellow">
+            <div class="cell">
+              <div id="colorMostWin" class="piece"></div>
+            </div>
+            <p class="subtext">
+              Har vunnet flest kamper med
+              <span id="colorAmountWon"></span> vunnet spill!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="history">
+      <div class="container" id="history">
+        <div class="history-title">
+          <h2>Game History</h2>
+          <button id="clearHistory" class="btn warning">Clear history</button>
+        </div>
+
+        <div class="game-history-container"></div>
+        <button id="seeMore" class="btn extra">See more</button>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid" id="footer">
+          <div class="footer-grid-card">
+            <div class="brand">
+              <h2>Connect-4</h2>
+            </div>
+            <p class="subtext">
+              Quick access to the main parts of the page and the playable game.
+            </p>
+
+            <div class="dots">
+              <span class="footer-dot"></span><span class="footer-dot"></span
+              ><span class="footer-dot"></span><span class="footer-dot"></span>
+            </div>
+          </div>
+          <div class="footer-grid-card">
+            <h3>Page</h3>
+            <ul>
+              <li><a href="">Top</a></li>
+              <li><a href="">How it works</a></li>
+              <li><a href="">Challenge section</a></li>
+            </ul>
+          </div>
+          <div class="footer-grid-card">
+            <h3>Game</h3>
+            <ul>
+              <li><a href="game/connect4.html">Play now</a></li>
+              <li><a href="">Rules</a></li>
+              <li><a href="">features</a></li>
+            </ul>
+          </div>
+          <div class="footer-grid-card">
+            <h3>Contact us</h3>
+            <ul>
+              <li><a>Aleksander Jørgensen</a></li>
+              <li><a href="tel:+4745966133">+47 45966133</a></li>
+              <li>
+                <a href="mailto:aleksander.joergensen@gmail.com"
+                  >aleksander.joergensen@gmail.com</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="popup-container hidden" id="confirmDelete">
+      <div class="popup">
+        <div class="title">
+          <h2>Clear game history?</h2>
+          <p class="subtext">
+            Saved games and stats from this browser will be deleted
+          </p>
+        </div>
+
+        <div class="inputs">
+          <input
+            type="password"
+            placeholder="Enter password"
+            id="clearHistoryPassword"
+          />
+        </div>
+        <div class="popup-btns">
+          <button id="deleteHistory" class="btn warning">Delete history</button>
+          <button id="cancelDelete" class="btn primary">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
